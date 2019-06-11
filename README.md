@@ -1,17 +1,16 @@
 # Hadoop Book - Chapter 1
 Solution to weather forecast data. This solution uses small sample data 
-from National climatic data center. Complete data is available [here](ftp://ftp.ncdc.noaa.gov/pub/data/noaa/)
-for download.
+from National climatic data center. Complete data is available [here](ftp://ftp.ncdc.noaa.gov/pub/data/noaa/) for download.
 
 # How to run this application
 
-* Build the application `mvn clean install`. This should create a jar file `weather-sample-1.0-SNAPSHOT.jar` in target dir.
-* Start Hadoop docker image. 
-** Pull the image (if you don't have already) : `docker pull sequenceiq/hadoop-docker`
-** Run the container by passing target directory as volume to docker image.
+1. Build the application `mvn clean install`. This should create a jar file `weather-sample-1.0-SNAPSHOT.jar` in target dir.
+2. Start Hadoop docker image.
+   * Pull the image (if you don't have already) : `docker pull sequenceiq/hadoop-docker` 
+   * Run the container by passing target directory as volume to docker image.
 
-sample: `docker run -v=<local target folder location>:<location where target to be placed inside container> -it <container id or name> /etc/bootstrap.sh -bash`
-command: `docker run -v=$HOME/data/:/etc/hadoop/ -it 5c /etc/bootstrap.sh -bash`
+   sample: `docker run -v=<local target folder location>:<location where target to be placed inside container> -it <container id or   name> /etc/bootstrap.sh -bash`
+   command: `docker run -v=$HOME/data/:/etc/hadoop/ -it 5c /etc/bootstrap.sh -bash`
 
 Note: Docker doesnot allow to use actual full path for local folder location.  Hence `$HOME/data/target`.
 Reference: https://stackoverflow.com/questions/40213524/using-absolute-path-with-docker-run-command-not-working
@@ -37,6 +36,7 @@ Exception in thread "main" java.lang.UnsupportedClassVersionError: Unsupported m
 
 # Sample log
 
+```
 bash-4.1# bin/hadoop jar /etc/hadoop/target/weather-sample-1.0-SNAPSHOT.jar /etc
 /hadoop/input/input.txt  /etc/hadoop/target/classes/output
 19/05/20 06:47:09 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0
@@ -92,3 +92,4 @@ ssfully
                 Reduce output records=0
                 Shuffled Maps =10
                 Merged Map outputs=1
+  ```
