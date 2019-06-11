@@ -1,6 +1,6 @@
 # Hadoop Book - Chapter 1
 Solution to weather forecast data. This solution uses small sample data 
-from National climatic data center. Complete data is available (here)[ftp://ftp.ncdc.noaa.gov/pub/data/noaa/]
+from National climatic data center. Complete data is available [here](ftp://ftp.ncdc.noaa.gov/pub/data/noaa/)
 for download.
 
 # How to run this application
